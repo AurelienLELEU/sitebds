@@ -7,7 +7,6 @@ function App() {
 
   const products = [
     { ref: "HEX-01", price: 45 },
-    { ref: "HEX-02", price: 150 },
     { ref: "HEX-04", price: 45 },
     { ref: "HEX-05", price: 40 },
     { ref: "HEX-06", price: 35 },
@@ -28,9 +27,9 @@ function App() {
           <h1>BDS Hexagone</h1>
         </div>
         <ul>
-          <li><a href="#">Accueil</a></li>
+          {/* <li><a href="#">Accueil</a></li>
           <li><a href="#">Services</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="#">Contact</a></li> */}
         </ul>
       </nav>
 
@@ -42,7 +41,7 @@ function App() {
               `${process.env.PUBLIC_URL}/pict/BDSPULLLFACE-removebg-preview.png`,
               `${process.env.PUBLIC_URL}/pict/BDSPULL-removebg-preview.png`
             ],
-            [`${process.env.PUBLIC_URL}/pict/00016-2796579985-Photoroom.png`],
+            // [`${process.env.PUBLIC_URL}/pict/00016-2796579985-Photoroom.png`],
             [
               `${process.env.PUBLIC_URL}/pict/vesteFace1-removebg-preview.png`,
               `${process.env.PUBLIC_URL}/pict/veste1-removebg-preview.png`
@@ -83,7 +82,7 @@ function App() {
       {/* Footer */}
       <footer className="footer">
         <p>&copy; 2025 BDS Hexagone. Tous droits réservés.</p>
-        <p>Pour précommander,ou si vous avez des questions, adressez-vous à : <a href="mailto:bds@ecole-hexagone.com"><font color="#00FF00">bds@ecole-hexagone.com</font></a> ou a notre compte instagram @hexagonebds</p>
+        <p>Pour précommander, ou si vous avez des questions, adressez-vous à : <a href="mailto:bds@ecole-hexagone.com">bds@ecole-hexagone.com</a> ou a notre compte Instagram @hexagonebds</p>
       </footer>
     </div>
   );
