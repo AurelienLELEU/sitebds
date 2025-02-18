@@ -5,9 +5,9 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 function App() {
   const products = [
-    { ref: "HEX-01", price: 45 },
+    { ref: "HEX-01", price: 40 },
     { ref: "HEX-02", price: 45 },
-    { ref: "HEX-03", price: 40 },
+    { ref: "HEX-03", price: 45 },
     { ref: "HEX-04", price: 35 },
     { ref: "HEX-05", price: 35 },
     { ref: "HEX-06", price: 35 },
@@ -31,6 +31,10 @@ function App() {
           {[
             [
               `${process.env.PUBLIC_URL}/pict/BDSPULLLFACE-removebg-preview.png`,
+              `${process.env.PUBLIC_URL}/pict/simpl.png`,
+            ],
+            [
+              `${process.env.PUBLIC_URL}/pict/BDSPULLLFACE-removebg-preview.png`,
               `${process.env.PUBLIC_URL}/pict/BDSPULL-removebg-preview.png`,
             ],
             [
@@ -38,16 +42,12 @@ function App() {
               `${process.env.PUBLIC_URL}/pict/veste1-removebg-preview.png`,
             ],
             [
-              `${process.env.PUBLIC_URL}/pict/BDSPULLLFACE-removebg-preview.png`,
-              `${process.env.PUBLIC_URL}/pict/simpl.png`,
-            ],
-            [
-              `${process.env.PUBLIC_URL}/pict/teesh1.png`,
               `${process.env.PUBLIC_URL}/pict/teesh2.png`,
+              `${process.env.PUBLIC_URL}/pict/teesh1.png`,
             ],
             [
-              `${process.env.PUBLIC_URL}/pict/deb1.png`,
               `${process.env.PUBLIC_URL}/pict/deb2.png`,
+              `${process.env.PUBLIC_URL}/pict/deb1.png`,
             ],
             [
               `${process.env.PUBLIC_URL}/pict/deb4.png`,
@@ -74,7 +74,6 @@ function App() {
         </Carousel>
       </div>
 
-      {/* Footer */}
       <footer className="footer">
         <p>
           Pour précommander, ou si vous avez des questions, adressez-vous à :{" "}
