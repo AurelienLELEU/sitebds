@@ -21,7 +21,7 @@ body {
   top: 0;
   left: 0;
   right: 0;
-  height: 45px;
+  max-height: 45px;
   z-index: 1000;
 }
 
@@ -44,7 +44,7 @@ body {
 }
 
 .carousel .slide img {
-  width: 100%;
+  width: 50%;
   object-fit: contain;
   border-left: 5px solid #310046;
   border-right: 5px solid #310046;
