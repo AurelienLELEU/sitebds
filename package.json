@@ -1,7 +1,7 @@
 {
   "name": "site-bds",
   "version": "0.1.0",
-  "homepage": "https://AurelienLELEU.github.io/sitebds",
+  "homepage": "https://bds.ecole-hexagone.com/",
   "private": true,
   "dependencies": {
     "cra-template": "1.2.0",
