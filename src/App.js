@@ -27,47 +27,31 @@ function App() {
       </nav>
 
       <div className="content">
-        <Carousel autoPlay infiniteLoop showThumbs={false} showStatus={false}>
-          {[
-            [
-              `${process.env.PUBLIC_URL}/pict/BDSPULLLFACE-removebg-preview.png`,
-              `${process.env.PUBLIC_URL}/pict/simpl.png`,
-            ],
-            [
-              `${process.env.PUBLIC_URL}/pict/BDSPULLLFACE-removebg-preview.png`,
-              `${process.env.PUBLIC_URL}/pict/BDSPULL-removebg-preview.png`,
-            ],
-            [
-              `${process.env.PUBLIC_URL}/pict/vesteFace1-removebg-preview.png`,
-              `${process.env.PUBLIC_URL}/pict/veste1-removebg-preview.png`,
-            ],
-            [
-              `${process.env.PUBLIC_URL}/pict/teesh2.png`,
-              `${process.env.PUBLIC_URL}/pict/teesh1.png`,
-            ],
-            [
-              `${process.env.PUBLIC_URL}/pict/deb2.png`,
-              `${process.env.PUBLIC_URL}/pict/deb1.png`,
-            ],
-            [
-              `${process.env.PUBLIC_URL}/pict/deb4.png`,
-              `${process.env.PUBLIC_URL}/pict/deb3.png`,
-            ],
-          ].map((images, index) => (
+        <Carousel
+          autoPlay
+          infiniteLoop
+          showThumbs={false}
+          showStatus={false}
+          swipeable
+          emulateTouch
+        >
+          {products.map((product, index) => (
             <div key={index} className="divcarousel">
               <div className="couplePhoto">
-                {images.map((src, i) => (
-                  <img
-                    key={i}
-                    src={src}
-                    alt={`Slide ${index + 1}`}
-                    className="imgcarousel"
-                  />
-                ))}
+                <img
+                  src={`${process.env.PUBLIC_URL}/pict/${product.ref}-1.png`}
+                  alt={`Product ${product.ref}`}
+                  className="imgcarousel"
+                />
+                <img
+                  src={`${process.env.PUBLIC_URL}/pict/${product.ref}-2.png`}
+                  alt={`Product ${product.ref}`}
+                  className="imgcarousel"
+                />
               </div>
               <div className="product-info">
-                <p>Réf: {products[index].ref}</p>
-                <p>Prix: {products[index].price}€</p>
+                <p>Réf: {product.ref}</p>
+                <p>Prix: {product.price}€</p>
               </div>
             </div>
           ))}

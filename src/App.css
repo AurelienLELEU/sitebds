@@ -31,13 +31,13 @@ body {
   justify-content: center;
   align-items: center;
   flex-grow: 1;
-  padding-top: 80px; /* Pour ne pas être caché par la navbar */
-  padding-bottom: 60px; /* Pour éviter le chevauchement avec le footer */
+  padding-top: 80px;
+  padding-bottom: 60px;
 }
 
 .carousel {
-  max-width: 100%; /* Ajuste selon tes besoins */
-  height: calc(100vh - 200px); /* Espace entre navbar et footer */
+  max-width: 100%;
+  height: calc(100vh - 200px);
   display: flex;
   justify-content: center;
   align-items: center;
