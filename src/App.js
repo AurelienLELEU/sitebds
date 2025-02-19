@@ -1,16 +1,48 @@
-import React from "react";
+import { useState, useEffect, React } from "react";
 import "./App.css";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
+
+const ProductImage = ({ ref }) => {
+  const [imageExists, setImageExists] = useState(false);
+
+  useEffect(() => {
+    const img = new Image();
+    img.src = `${process.env.PUBLIC_URL}/pict/${ref}-3.png`;
+    img.onload = () => setImageExists(true);
+    img.onerror = () => setImageExists(false);
+  }, [ref]);
+
+  return (
+    <>
+      <img
+        src={`${process.env.PUBLIC_URL}/pict/${ref}-1.png`}
+        alt={`Product ${ref}`}
+        className="imgcarousel"
+      />
+      {imageExists && (
+        <img
+          src={`${process.env.PUBLIC_URL}/pict/${ref}-3.png`}
+          alt={`Product ${ref}`}
+          className="imgcarousel"
+        />
+      )}
+      <img
+        src={`${process.env.PUBLIC_URL}/pict/${ref}-2.png`}
+        alt={`Product ${ref}`}
+        className="imgcarousel"
+      />
+    </>
+  );
+};
+
 function App() {
   const products = [
     { ref: "HEX-01", price: 40 },
-    { ref: "HEX-02", price: 45 },
     { ref: "HEX-03", price: 45 },
     { ref: "HEX-04", price: 35 },
     { ref: "HEX-05", price: 35 },
-    { ref: "HEX-06", price: 35 },
   ];
 
   return (
@@ -38,16 +70,7 @@ function App() {
           {products.map((product, index) => (
             <div key={index} className="divcarousel">
               <div className="couplePhoto">
-                <img
-                  src={`${process.env.PUBLIC_URL}/pict/${product.ref}-1.png`}
-                  alt={`Product ${product.ref}`}
-                  className="imgcarousel"
-                />
-                <img
-                  src={`${process.env.PUBLIC_URL}/pict/${product.ref}-2.png`}
-                  alt={`Product ${product.ref}`}
-                  className="imgcarousel"
-                />
+                <ProductImage ref={product.ref} />
               </div>
               <div className="product-info">
                 <p>Réf: {product.ref}</p>
@@ -62,8 +85,8 @@ function App() {
         <p>
           Pour précommander, ou si vous avez des questions, adressez-vous à :{" "}
           <a href="mailto:bds-versailles@ecole-hexagone.com">bds-versailles@ecole-hexagone.com</a> ou
-          a notre compte Instagram{" "}
-          <a target="_blank" href="https://www.instagram.com/hexagonebds/">
+          à notre compte Instagram{" "}
+          <a target="_blank" href="https://www.instagram.com/hexagonebds/" rel="noopener noreferrer">
             @hexagonebds
           </a>
         </p>
@@ -74,9 +97,3 @@ function App() {
 }
 
 export default App;
-
-{
-  /* 
-  Credits : @thomasClerc et un peut @aurelienLeleu
-  */
-}
