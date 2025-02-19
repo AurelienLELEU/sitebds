@@ -31,8 +31,9 @@ body {
   justify-content: center;
   align-items: center;
   flex-grow: 1;
-  padding-top: 80px;
-  padding-bottom: 60px;
+  height: calc(100vh - 187px);
+  padding-top: 90px;
+  padding-bottom: 90px;
 }
 
 .carousel {
@@ -60,7 +61,7 @@ body {
 .couplePhoto {
   display: flex;
   justify-content: center;
-  gap: 10px;
+  gap: 40px;
 }
 
 .imgcarousel {
@@ -74,12 +75,18 @@ body {
   background-color: #310046;
   color: #ffd200;
   text-align: center;
-  padding: 1rem;
-  position: absolute;
+  position: fixed;
+  padding: 10px 0;
   bottom: 0;
   width: 100%;
   border-top: 3px solid #ffd200;
 }
+
+.footer {
+  position: fixed;
+  padding: 10px 0;
+}
+
 
 .logo {
   max-width: 50px;
@@ -93,8 +100,66 @@ body {
   align-items: center;
 }
 
-a{
-  text-decoration:none;
+a {
+  text-decoration: none;
   color: #ffd000;
   text-decoration: underline;
+}
+
+.product-item {
+  align-items: center;
+  justify-content: center;
+}
+
+/* Affichage pour les écrans larges (Carousel) */
+@media (min-width: 1100px) {
+  .mobile-view {
+    display: none;
+  }
+}
+
+/* Affichage pour les écrans plus petits (Liste de produits à faire défiler) */
+@media (max-width: 1099px) {
+  .carousel-container {
+    display: none;
+  }
+
+  .mobile-view {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    overflow-y: auto;
+    max-height: 80vh;
+    padding: 10px;
+  }
+
+  .product-item {
+    width: 90%;
+    /* border: 1px solid #ccc; */
+    border-radius: 10px;
+    padding: 10px;
+    /* background-color: #f9f9f9; */
+  }
+
+  .product-info {
+    font-size: 18px;
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .product-info p {
+    font-size: 18px;
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .couplePhoto img {
+    max-width: 45%;
+    height: auto;
+    /* max-width: 500px; Ajuste selon tes préférences */
+    object-fit: contain;
+  }
 }

@@ -1,18 +1,19 @@
-import { useState, useEffect, React } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
-
-const ProductImage = ({ ref }) => {
+const ProductImage = ({ ref, isMobile }) => {
   const [imageExists, setImageExists] = useState(false);
 
   useEffect(() => {
-    const img = new Image();
-    img.src = `${process.env.PUBLIC_URL}/pict/${ref}-3.png`;
-    img.onload = () => setImageExists(true);
-    img.onerror = () => setImageExists(false);
-  }, [ref]);
+    if (!isMobile) {
+      const img = new Image();
+      img.src = `${process.env.PUBLIC_URL}/pict/${ref}-3.png`;
+      img.onload = () => setImageExists(true);
+      img.onerror = () => setImageExists(false);
+    }
+  }, [ref, isMobile]);
 
   return (
     <>
@@ -21,7 +22,7 @@ const ProductImage = ({ ref }) => {
         alt={`Product ${ref}`}
         className="imgcarousel"
       />
-      {imageExists && (
+      {!isMobile && imageExists && (
         <img
           src={`${process.env.PUBLIC_URL}/pict/${ref}-3.png`}
           alt={`Product ${ref}`}
@@ -38,6 +39,14 @@ const ProductImage = ({ ref }) => {
 };
 
 function App() {
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 1100);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 1100);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   const products = [
     { ref: "HEX-01", price: 40 },
     { ref: "HEX-03", price: 45 },
@@ -59,33 +68,49 @@ function App() {
       </nav>
 
       <div className="content">
-        <Carousel
-          autoPlay
-          infiniteLoop
-          showThumbs={false}
-          showStatus={false}
-          swipeable
-          emulateTouch
-        >
-          {products.map((product, index) => (
-            <div key={index} className="divcarousel">
-              <div className="couplePhoto">
-                <ProductImage ref={product.ref} />
+        {isMobile ? (
+          <div className="mobile-view">
+            {products.map((product, index) => (
+              <div key={index} className="product-item">
+                <div className="couplePhoto">
+                  <ProductImage ref={product.ref} isMobile={isMobile} />
+                </div>
+                <div className="product-info" style={{ textAlign: "center" }}>
+                  <p>Réf: {product.ref}</p>
+                  <p>Prix: {product.price}€</p>
+                </div>
               </div>
-              <div className="product-info">
-                <p>Réf: {product.ref}</p>
-                <p>Prix: {product.price}€</p>
+            ))}
+          </div>
+        ) : (
+          <Carousel
+            autoPlay
+            infiniteLoop
+            showThumbs={false}
+            showStatus={false}
+            swipeable
+            emulateTouch
+          >
+            {products.map((product, index) => (
+              <div key={index} className="divcarousel">
+                <div className="couplePhoto">
+                  <ProductImage ref={product.ref} isMobile={isMobile} />
+                </div>
+                <div className="product-info">
+                  <p>Réf: {product.ref}</p>
+                  <p>Prix: {product.price}€</p>
+                </div>
               </div>
-            </div>
-          ))}
-        </Carousel>
+            ))}
+          </Carousel>
+        )}
       </div>
 
       <footer className="footer">
         <p>
-          Pour précommander, ou si vous avez des questions, adressez-vous à :{" "}
+          Pour précommander, ou si vous avez des questions, adressez-vous à :
           <a href="mailto:bds-versailles@ecole-hexagone.com">bds-versailles@ecole-hexagone.com</a> ou
-          à notre compte Instagram{" "}
+          à notre compte Instagram
           <a target="_blank" href="https://www.instagram.com/hexagonebds/" rel="noopener noreferrer">
             @hexagonebds
           </a>
