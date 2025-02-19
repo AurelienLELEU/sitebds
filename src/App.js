@@ -61,7 +61,7 @@ function App() {
       <footer className="footer">
         <p>
           Pour précommander, ou si vous avez des questions, adressez-vous à :{" "}
-          <a href="mailto:bds-versailles@ecole-hexagone.com">bds@ecole-hexagone.com</a> ou
+          <a href="mailto:bds-versailles@ecole-hexagone.com">bds-versailles@ecole-hexagone.com</a> ou
           a notre compte Instagram{" "}
           <a target="_blank" href="https://www.instagram.com/hexagonebds/">
             @hexagonebds
