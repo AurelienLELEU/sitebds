@@ -106,20 +106,20 @@ function App() {
 
       <footer className="footer">
         <p>
-          Pour précommander, ou si vous avez des questions, adressez-vous à :
+          Pour précommander, ou des questions, adressez-vous à :
           <a href="mailto:bds-versailles@ecole-hexagone.com">
             bds-versailles@ecole-hexagone.com
           </a>
-          ou à notre compte Instagram
+          {" / "}
           <a
             target="_blank"
             href="https://www.instagram.com/hexagonebds/"
             rel="noopener noreferrer"
           >
             @hexagonebds
-          </a>
+          </a> {" sur Instagram"}
         </p>
-        <p>&copy; 2025 BDS Hexagone. Tous droits réservés.</p>
+        <p>&copy; 2025 BDS Hexagone</p>
       </footer>
     </div>
   );
