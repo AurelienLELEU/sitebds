@@ -52,6 +52,7 @@ function App() {
     { productRef: "HEX-03", price: 45 },
     { productRef: "HEX-04", price: 35 },
     { productRef: "HEX-05", price: 35 },
+    { productRef: "HEX-06", price: 25 },
   ];
 
   return (
