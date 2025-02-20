@@ -108,9 +108,9 @@ a {
     align-items: center;
     gap: 20px;
     overflow-y: auto;
-    max-height: 100vh;
+    max-height: 80vh;
     padding-top: 60px;
-    /* padding-bottom: 50px; */
+    padding-bottom: 50px;
   }
 
   .product-item {

@@ -108,7 +108,7 @@ function App() {
         {isMobile ? (
           <div>
             <p>
-              Contact :
+              Pour précommander :
               <a href="mailto:bds-versailles@ecole-hexagone.com">
                 bds-versailles@ecole-hexagone.com
               </a>
