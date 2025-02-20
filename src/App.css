@@ -24,7 +24,8 @@ body {
 }
 
 .navbar img {
-  max-height: 50px; /* Ensures image doesn't exceed navbar height */
+  max-height: 50px;
+  /* Ensures image doesn't exceed navbar height */
 }
 
 .content {
@@ -107,8 +108,9 @@ a {
     align-items: center;
     gap: 20px;
     overflow-y: auto;
-    max-height: 80vh;
-    padding: 10px;
+    max-height: 100vh;
+    padding-top: 60px;
+    /* padding-bottom: 50px; */
   }
 
   .product-item {
@@ -138,5 +140,16 @@ a {
     height: auto;
     /* max-width: 500px; Ajuste selon tes préférences */
     object-fit: contain;
+  }
+
+  .footer {
+    background-color: #310046;
+    color: #ffd200;
+    text-align: center;
+    position: fixed;
+    padding: 0;
+    bottom: 0;
+    width: 100%;
+    border-top: 3px solid #ffd200;
   }
 }

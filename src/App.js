@@ -105,21 +105,41 @@ function App() {
       </div>
 
       <footer className="footer">
-        <p>
-          Pour précommander, ou des questions, adressez-vous à :
-          <a href="mailto:bds-versailles@ecole-hexagone.com">
-            bds-versailles@ecole-hexagone.com
-          </a>
-          {" / "}
-          <a
-            target="_blank"
-            href="https://www.instagram.com/hexagonebds/"
-            rel="noopener noreferrer"
-          >
-            @hexagonebds
-          </a> {" sur Instagram"}
-        </p>
-        <p>&copy; 2025 BDS Hexagone</p>
+        {isMobile ? (
+          <div>
+            <p>
+              Contact :
+              <a href="mailto:bds-versailles@ecole-hexagone.com">
+                bds-versailles@ecole-hexagone.com
+              </a>
+              {" / "}
+              <a
+                target="_blank"
+                href="https://www.instagram.com/hexagonebds/"
+                rel="noopener noreferrer"
+              >
+                @hexagonebds
+              </a>
+            </p>
+            <p>&copy; 2025 BDS Hexagone</p>
+          </div>) : (<div>
+
+            <p>
+              Pour précommander, ou des questions, adressez-vous à :
+              <a href="mailto:bds-versailles@ecole-hexagone.com">
+                bds-versailles@ecole-hexagone.com
+              </a>
+              {" / "}
+              <a
+                target="_blank"
+                href="https://www.instagram.com/hexagonebds/"
+                rel="noopener noreferrer"
+              >
+                @hexagonebds
+              </a> {" sur Instagram"}
+            </p>
+            <p>&copy; 2025 BDS Hexagone</p>
+          </div>)}
       </footer>
     </div>
   );
