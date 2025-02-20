@@ -86,6 +86,7 @@ function App() {
             infiniteLoop
             showThumbs={false}
             showStatus={false}
+            interval={3000}
             swipeable
             emulateTouch
           >
@@ -125,11 +126,11 @@ function App() {
           </div>) : (<div>
 
             <p>
-              Pour précommander, ou des questions, adressez-vous à :
+              Pour précommander, ou tout autre question, adressez-vous à :{" "}
               <a href="mailto:bds-versailles@ecole-hexagone.com">
                 bds-versailles@ecole-hexagone.com
               </a>
-              {" / "}
+              {" ou "}
               <a
                 target="_blank"
                 href="https://www.instagram.com/hexagonebds/"
