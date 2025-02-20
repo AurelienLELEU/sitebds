@@ -66,22 +66,26 @@ function App() {
         <h1>BDS Hexagone</h1>
       </nav>
 
-      <div className="content">
-        {isMobile ? (
-          <div className="mobile-view">
-            {products.map((product, index) => (
-              <div key={index} className="product-item">
-                <div className="couplePhoto">
-                  <ProductImage productRef={product.productRef} isMobile={isMobile} />
-                </div>
-                <div className="product-info" style={{ textAlign: "center" }}>
-                  <p>Réf: {product.productRef}</p>
-                  <p>Prix: {product.price}€</p>
-                </div>
+      {isMobile ? (
+        <div className="mobile-view">
+          {products.map((product, index) => (
+            <div key={index} className="product-item">
+              <div className="couplePhoto">
+                <ProductImage
+                  productRef={product.productRef}
+                  isMobile={isMobile}
+                />
               </div>
-            ))}
-          </div>
-        ) : (
+              <div className="product-info" style={{ textAlign: "center" }}>
+                <p>Réf: {product.productRef}</p>
+                <p>Prix: {product.price}€</p>
+              </div>
+            </div>
+          ))}
+          <div className="spacer"></div>
+        </div>
+      ) : (
+        <div className="content">
           <Carousel
             autoPlay
             infiniteLoop
@@ -94,7 +98,10 @@ function App() {
             {products.map((product, index) => (
               <div key={index} className="divcarousel">
                 <div className="couplePhoto">
-                  <ProductImage productRef={product.productRef} isMobile={isMobile} />
+                  <ProductImage
+                    productRef={product.productRef}
+                    isMobile={isMobile}
+                  />
                 </div>
                 <div className="product-info">
                   <p>Réf: {product.productRef}</p>
@@ -103,8 +110,9 @@ function App() {
               </div>
             ))}
           </Carousel>
-        )}
-      </div>
+        </div>
+      )}
+      {/* </div> */}
 
       <footer className="footer">
         {isMobile ? (
@@ -124,8 +132,9 @@ function App() {
               </a>
             </p>
             <p>&copy; 2025 BDS Hexagone</p>
-          </div>) : (<div>
-
+          </div>
+        ) : (
+          <div>
             <p>
               Pour précommander, ou tout autre question, adressez-vous à :{" "}
               <a href="mailto:bds-versailles@ecole-hexagone.com">
@@ -138,10 +147,12 @@ function App() {
                 rel="noopener noreferrer"
               >
                 @hexagonebds
-              </a> {" sur Instagram"}
+              </a>{" "}
+              {" sur Instagram"}
             </p>
             <p>&copy; 2025 BDS Hexagone</p>
-          </div>)}
+          </div>
+        )}
       </footer>
     </div>
   );

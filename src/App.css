@@ -7,6 +7,7 @@ body {
   flex-direction: column;
   height: 100vh;
   overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 .navbar {
@@ -25,7 +26,6 @@ body {
 
 .navbar img {
   max-height: 50px;
-  /* Ensures image doesn't exceed navbar height */
 }
 
 .content {
@@ -108,17 +108,14 @@ a {
     align-items: center;
     gap: 20px;
     overflow-y: auto;
-    max-height: 80vh;
-    padding-top: 60px;
-    padding-bottom: 50px;
+    max-height: calc(100vh - 178px);
+    padding-top: 72px;
   }
 
   .product-item {
     width: 90%;
-    /* border: 1px solid #ccc; */
     border-radius: 10px;
     padding: 10px;
-    /* background-color: #f9f9f9; */
   }
 
   .product-info {
@@ -138,7 +135,6 @@ a {
   .couplePhoto img {
     max-width: 45%;
     height: auto;
-    /* max-width: 500px; Ajuste selon tes préférences */
     object-fit: contain;
   }
 
@@ -151,5 +147,10 @@ a {
     bottom: 0;
     width: 100%;
     border-top: 3px solid #ffd200;
+  }
+  .spacer {
+    display: flex;
+    min-height: 100px;
+    width: 100%;
   }
 }
