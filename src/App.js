@@ -118,7 +118,7 @@ function App() {
         {isMobile ? (
           <div>
             <p>
-              Pour précommander :
+              Pour précommander :{" "}
               <a href="mailto:bds-versailles@ecole-hexagone.com">
                 bds-versailles@ecole-hexagone.com
               </a>
