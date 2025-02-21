@@ -1,7 +1,7 @@
 @font-face {
   font-family: "Flama";   /*Can be any text*/
   src: local("FlamaMedium"),
-    url("./fonts/Flama-Medium.ttf") format("truetype");
+    url("./fonts/test-Medium.ttf") format("truetype");
 }
 
 body {
